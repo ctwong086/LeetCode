@@ -26,4 +26,4 @@ let twoSum = function(nums, target) {
             list[cur] = i;
         }
     }
-};
+}
