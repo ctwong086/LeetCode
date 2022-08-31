@@ -4,4 +4,4 @@
 let isPalindrome = function(x) {
     let reverse = Number(String(x).split('').reverse().join(''));
     return x === reverse;
-};
+}
