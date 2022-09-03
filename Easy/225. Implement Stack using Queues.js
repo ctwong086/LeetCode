@@ -2,7 +2,7 @@
 
 //Attempt#1
 let MyStack = function() {
-    this.stack = [];
+    this.queue = [];
 }
 
 /** 
@@ -10,7 +10,7 @@ let MyStack = function() {
  * @return {void}
  */
 MyStack.prototype.push = function(x) {
-    this.stack.push(x);
+    this.queue.push(x);
 }
 
 /**
@@ -19,12 +19,12 @@ MyStack.prototype.push = function(x) {
 MyStack.prototype.pop = function() {
     let temp = [];
     
-    while(this.stack.length > 1) {
-        temp.push(this.stack.shift());
+    while(this.queue.length > 1) {
+        temp.push(this.queue.shift());
     }
-    let e = this.stack.shift();
-    this.stack = temp;
-    return e;
+    let last = this.queue.shift();
+    this.queue = temp;
+    return last;
 }
 
 /**
@@ -33,20 +33,20 @@ MyStack.prototype.pop = function() {
 MyStack.prototype.top = function() {
     let temp = [];
     
-    while(this.stack.length > 1) {
-        temp.push(this.stack.shift());
+    while(this.queue.length > 1) {
+        temp.push(this.queue.shift());
     }
-    let e = this.stack.shift();
-    temp.push(e);
-    this.stack = temp;
-    return e;
+    let last = this.queue.shift();
+    temp.push(last);
+    this.queue = temp;
+    return last;
 }
 
 /**
  * @return {boolean}
  */
 MyStack.prototype.empty = function() {
-    return this.stack.length === 0;
+    return this.queue.length === 0;
 }
 
 /** 
