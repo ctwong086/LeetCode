@@ -15,16 +15,16 @@ let isSymmetric = function(root) {
 //Attempt#2 Preorder DFS Iterative
 let isSymmetric = function(root) {
     function check(left, right) {
-        let leftStack = [left], rightStack = [right];
+        let lStack = [left], rStack = [right];
         
-        while(leftStack.length > 0 || rightStack.length > 0) {
-            let l = leftStack.pop(), r = rightStack.pop();
+        while(lStack.length > 0 || rStack.length > 0) {
+            let l = lStack.pop(), r = rStack.pop();
             
             if(!l && !r) {continue};
             if(!l || !r || l.val !== r.val) {return false};
             
-            leftStack.push(l.left);  rightStack.push(r.right);
-            leftStack.push(l.right);  rightStack.push(r.left);
+            lStack.push(l.left);  rStack.push(r.right);
+            lStack.push(l.right);  rStack.push(r.left);
         }
         return true;
     }
@@ -35,16 +35,16 @@ let isSymmetric = function(root) {
 //Attempt#2 Preorder BFS Iterative
 let isSymmetric = function(root) {
     function check(left, right) {
-        let leftStack = [left], rightStack = [right];
+        let lStack = [left], rStack = [right];
         
-        while(leftStack.length > 0 || rightStack.length > 0) {
-            let l = leftStack.shift(), r = rightStack.shift();
+        while(lStack.length > 0 || rStack.length > 0) {
+            let l = lStack.shift(), r = rStack.shift();
             
             if(!l && !r) {continue};
             if(!l || !r || l.val !== r.val) {return false};
             
-            leftStack.push(l.left);  rightStack.push(r.right);
-            leftStack.push(l.right);  rightStack.push(r.left);
+            lStack.push(l.left);  rStack.push(r.right);
+            lStack.push(l.right);  rStack.push(r.left);
         }
         return true;
     }
