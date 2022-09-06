@@ -9,11 +9,10 @@ let generate = function(numRows) {
         
         res[i].push(1);
         for(let j = 1; j < i; j++) {
-            let sum = res[i - 1][j - 1] + res[i - 1][j];
-            res[i][j] = sum;
+            res[i][j] = res[i - 1][j - 1] + res[i - 1][j];
         }
         res[i].push(1);
     }
-
+    
     return res;
 }
