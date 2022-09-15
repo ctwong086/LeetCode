@@ -18,6 +18,5 @@ let reverseVowels = function(s) {
             res += s[i];
         }
     }
-    
     return res;
 }
